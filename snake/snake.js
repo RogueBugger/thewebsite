@@ -16,7 +16,7 @@ class Snake {
         this.xspeed = 0;
         this.fitness = 0;
         this.yspeed = 0;
-        this.maxstep = 60;
+        this.maxstep = 100;
         this.steps = this.maxstep;
         this.food = this.createfood();
         this.score = 0;
@@ -152,7 +152,7 @@ class Snake {
         let head = this.body[this.body.length - 1];
         inputs[2] = head.x / w;
         inputs[3] = head.y / h;
-        inputs[4] = this.getdist() / 20;
+        inputs[4] = this.getdist();
 
         let val = this.info();
         let index = 0;

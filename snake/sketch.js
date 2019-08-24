@@ -5,7 +5,7 @@ let h;
 let font, fontsize = 40;
 let highscore = 0;
 let generation = 0;
-let total_population = 700;
+let total_population = 10000;
 let score = 0;
 let snakes = [];
 let savedSnakes = [];
@@ -31,8 +31,7 @@ function draw() {
     try {
         for (let k = 1; k < snakes.length; k++) {
             if (snakes[k].score > snakes[best1].score) {
-                if (snakes[k].steps > snakes[best1].steps)
-                    best1 = k;
+                best1 = k;
 
             }
         }
@@ -50,8 +49,8 @@ function draw() {
         snakes[i].update();
         snakes[i].think();
         if (snakes[i].endgame()) {
-            // savedSnakes.push(snakes.splice(i, 1)[0]);
-            savedSnakes.push(snake[i]);
+            savedSnakes.push(snakes.splice(i, 1)[0]);
+            //savedSnakes.push(snakes[i]);
             if (score > highscore) {
                 highscore = score;
             }
